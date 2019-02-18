@@ -1,3 +1,5 @@
+This app uses image API to fetch images and display them after passing search query.
+
 # spacer
 
 ## Project setup
