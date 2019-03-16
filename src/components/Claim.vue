@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .claimWrapper {
   display: flex;
   text-align: center;

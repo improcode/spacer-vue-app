@@ -1,15 +1,8 @@
 <template>
   <div class="wrapper">
     <Claim/>
-    <div class="search">
-      <label for="search">Search</label>
-      <input id="search" name="search" v-model="searchValue" @input="handleInput">
-      <ul>
-        <li v-for="item in results" :key="item.data[0].nasa_id">
-          <p>{{ item.data[0].description}}</p>
-        </li>
-      </ul>
-    </div>
+    <SearchInput/>
+
   </div>
 </template>
 
@@ -17,13 +10,14 @@
 import axios from "axios";
 import debounce from "lodash.debounce";
 // eslint-disable-next-line
-import Claim from "../components/Claim";
+import Claim from "@/components/Claim";
+import SearchInput from "@/components/SearchInput";
 
 const API = "https://images-api.nasa.gov/search";
 
 export default {
   name: "Search",
-  components: { Claim },
+  components: { Claim, SearchInput },
   data() {
     // funkcja, która zwraca obiekt
     return {
@@ -56,21 +50,13 @@ export default {
   margin: 0;
   padding: 30px;
   width: 100%;
+  height: 100vh;
+  justify-content: center;
+  background-image: url('../assets/heroimage.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 80% 0%;
+
 }
 
-.search {
-  // display: none;
-  flex-direction: column;
-  width: 250px;
-}
-
-label {
-  font-family: Montserrat, sans-serif;
-}
-
-input {
-  height: 30px;
-  border: 0;
-  border-bottom: 1px solid black;
-}
 </style>
